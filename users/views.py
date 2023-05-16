@@ -66,6 +66,6 @@ class SendEmailVerificationCode(APIView):
         code = get_random_string(allowed_chars='123456789', length=6)
         VerificationCode.objects.create(email=email, code=code)
         subject = 'Verification'
-        messages = f'Hi {email},Your verification code is  {code}. Don''t give anyone'
+        messages = f'Hi {email},Your verification code is  {code} for ERKINOV 🎱 website. Don''t give anyone'
         send_mail(subject, messages, from_email=settings.EMAIL_HOST_USER, recipient_list=[email])
         return Response({"detail": 'Sent successfully '})

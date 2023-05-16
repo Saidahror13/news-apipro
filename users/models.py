@@ -7,13 +7,13 @@ from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
-    email = models.EmailField(_)
+    email = models.EmailField(unique=True)
     username = models.CharField(_('username'), max_length=150, null=True)
     phone = models.CharField(max_length=15, null=True)
     age = models.PositiveSmallIntegerField(null=True)
     address = models.CharField(max_length=255, null=True)
 
-    objects = CustomUserManager
+    objects = CustomUserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -40,4 +40,3 @@ class VerificationCode(models.Model):
     @property
     def is_expire(self):
         return self.expired_at < self.last_sent_time + timedelta(seconds=30)
-    

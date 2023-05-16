@@ -17,8 +17,6 @@ import os
 
 import environ
 
-from users.models import User
-
 env = environ.Env(
     DEBUG=(bool, False)
 )
@@ -49,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
+    'users',
     'news_category',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -151,4 +150,4 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
-AUTH_USER_MODEL = 'users.models.User'
+AUTH_USER_MODEL = 'users.User'
