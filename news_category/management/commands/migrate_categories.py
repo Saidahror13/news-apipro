@@ -9,6 +9,6 @@ class Command(BaseCommand):
         old_cats = category_models.Category.objects.all()
         for cat in old_cats:
             category_models.Category.objects.create(title=cat.title)
-        self.stdout.write(self.style.SUCCESS('Successfully migrated %s categories.' % old_cats.count()))
+        self.stdout.write(self.style.SUCCESS('Successfully migrated %s categories.' % old_cats.count())
 
 
