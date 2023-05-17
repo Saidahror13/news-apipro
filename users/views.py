@@ -31,8 +31,8 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 class ProfileView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def get(self, reuqest, *args, **kwargs):
-        serializer = UserSerializer(reuqest.user)
+    def get(self, reqest, *args, **kwargs):
+        serializer = UserSerializer(reqest.user)
         return Response(serializer.data)
 
     def put(self, request, *args, **kwargs):
