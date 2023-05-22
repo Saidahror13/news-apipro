@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = 'generate.Categories'
 
     def handle(self, *args, **options):
-        ParentCategoryFactory.create_batch(size=5)
+        ParentCategoryFactory.create_batch(size=10)
         CategoryFactory.create_batch(size=20)
 
         self.stdout.write(self.style.SUCCESS('Successfully generated (parent) categories'))

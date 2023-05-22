@@ -21,3 +21,7 @@ class Product(models.Model):
             self.slug = slug
             return super().save(*args, **kwargs)
 
+
+
+
+
