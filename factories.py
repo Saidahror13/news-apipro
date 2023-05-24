@@ -18,8 +18,36 @@ class CategoryFactory(factory.django.DjangoModelFactory):
 
 class ProductFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = 'products.Product'
+        model = 'news_product.Product'
 
     title = factory.Faker('word')
     price = factory.Faker('pyfloat')
     category = factory.SubFactory(CategoryFactory)
+
+
+class UserFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = "users.User"
+
+    first_name = factory.Faker("word")
+    email = factory.Faker("word")
+    age = factory.Faker("pyint")
+    password = f"{factory.Faker('pyint')}{factory.Faker('word')}"
+
+
+class BlogFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = 'comments.Blog'
+
+    title = factory.Faker("word")
+    author = factory.SubFactory(CategoryFactory)
+    body = factory.Faker('first_name')
+
+
+class CommentFactory(factory.django.DjangoModelFactory):
+    class Meta:
+        model = 'comments.Comments'
+
+    blog = factory.SubFactory(BlogFactory)
+    user = factory.SubFactory(UserFactory)
+    body = factory.Faker("word")

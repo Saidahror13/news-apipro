@@ -25,6 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('categories/', include('news_category.urls')),
     path('products/', include('news_prduct.urls')),
+    path('comment/', include('comment.urls.blog_urls')),
+    path('comments/', include('comment.urls.comment_urls')),
+    path('likedislike/', include('comment.urls.likedislike_url')),
     path('users/', include('users.urls'))
 ]
 schema_view = get_schema_view(
