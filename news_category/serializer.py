@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from news_category.models import Category
-from news_prduct.models import Product
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -10,10 +9,10 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'parent', 'updated_at')
 
 
-class ProductCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Product
-        fields = ('id', 'title')
+# class ProductCategorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Product
+#         fields = ('id', 'title')
 
 
 class CategoryCreateSerializer(serializers.ModelSerializer):
@@ -21,8 +20,8 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         model = Category
         fields = ['id', 'title', 'position', 'parent']
 
-    def to_representation(self, instance):
-        data = super().to_representation(instance)
-        data['category'] = ProductCategorySerializer(instance.category).data
-        return data
+    # def to_representation(self, instance):
+    #     data = super().to_representation(instance)
+    #     data['category'] = ProductCategorySerializer(instance.category).data
+    #     return data
 

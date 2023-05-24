@@ -3,8 +3,7 @@ from rest_framework import generics
 from rest_framework import status
 
 from news_category.models import Category
-from news_category.serializer import CategoryCreateSerializer, ProductCategorySerializer, CategorySerializer
-from rest_framework import exceptions
+from news_category.serializer import CategorySerializer
 
 
 class CategoryListView(generics.ListCreateAPIView):

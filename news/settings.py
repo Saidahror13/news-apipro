@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'news',
     'users',
     'news_category',
-    'news_prduct',
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
