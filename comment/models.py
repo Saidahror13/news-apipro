@@ -45,7 +45,7 @@ class LikeDislike(TimeStampModel):
     type = models.CharField(max_length=20, choices=LikeType.choices)
 
     def __str__(self):
-        return f"{self.user}"
+        return f"{self.type}"
 
 
 class Comments(TimeStampModel):
@@ -54,5 +54,4 @@ class Comments(TimeStampModel):
     body = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.body[0:50]
-
+        return f"{self.body[0:50]}"

@@ -11,7 +11,7 @@ class Product(models.Model):
     category = models.ForeignKey('news_category.Category', on_delete=models.CASCADE, related_name='products')
 
     def __str__(self):
-        return self.title
+        return f"{self.title}"
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
