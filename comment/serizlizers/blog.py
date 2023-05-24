@@ -13,7 +13,7 @@ class BlogAuthorSerializer(serializers.ModelSerializer):
 class BlogCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "title")
+        fields = ("id", "username")
 
 
 class BlogSerializer(serializers.ModelSerializer):
@@ -32,4 +32,4 @@ class BlogCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Blog
-        fields = ["id", "author", "title", "slug", "image", "category", "coolab", "body"]
+        fields = ["id", "author", "title", "slug", "image", "category", "collab", "body"]
