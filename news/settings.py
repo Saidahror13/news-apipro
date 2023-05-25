@@ -50,13 +50,18 @@ INSTALLED_APPS = [
     'users',
     'news_category',
     'rest_framework',
+    'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'drf_yasg',
     'django_filters',
     'comment',
     'dj_rest_auth',
     'allauth',
-    'rest_framework.authtoken'
+    'allauth.account',
+    'dj_rest_auth.registration',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 
 ]
 
