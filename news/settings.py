@@ -53,7 +53,10 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'drf_yasg',
     'django_filters',
-    'comment'
+    'comment',
+    'dj_rest_auth',
+    'allauth',
+    'rest_framework.authtoken'
 
 ]
 
