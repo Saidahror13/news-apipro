@@ -2,8 +2,8 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 from rest_framework.filters import OrderingFilter, SearchFilter
 from paginations import CustomPageNumberPagination
-from ..models import Blog
-from ..serizlizers.blog import BlogCreateSerializer, BlogSerializer
+from comment.models import Blog
+from comment.serizlizers.blog import BlogCreateSerializer, BlogSerializer
 
 
 class BlogListCreateView(generics.ListCreateAPIView):

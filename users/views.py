@@ -10,14 +10,14 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
+from dj_rest_auth.registration.views import SocialLoginView
+from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from news import settings
 from users.models import User
 from users.models import VerificationCode
 from users.serializer import UserSerializer, RegisterSerializer, LoginSerializer, CustomTokenObtainSerializer, \
-    UserDetailSerializer, SendEmailVerificationCodeSerializer, CheckEmailVerificationCodeSerializer
-from dj_rest_auth.registration.views import SocialLoginView
-from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+    SendEmailVerificationCodeSerializer, CheckEmailVerificationCodeSerializer
 
 
 class RegisterView(APIView):

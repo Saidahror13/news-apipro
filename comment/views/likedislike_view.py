@@ -1,6 +1,5 @@
 from rest_framework import generics
-
-from ..models import LikeDislike
+from comment.models import LikeDislike
 from ..serizlizers.like import LikeDislikeSerializer, LikeDislikeDetailSerializer
 
 

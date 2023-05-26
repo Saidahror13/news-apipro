@@ -1,7 +1,4 @@
-from httplib2 import Response
 from rest_framework import generics
-from rest_framework import status
-
 from news_category.models import Category
 from news_category.serializer import CategorySerializer
 

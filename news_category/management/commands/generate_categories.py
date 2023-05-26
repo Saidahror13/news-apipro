@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand
 from faker import Faker
-
 from factories import ParentCategoryFactory, CategoryFactory
 
 faker = Faker()

@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from ..models import Blog
-from news_category.models import Category
 from users.models import User
 
 

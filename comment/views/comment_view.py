@@ -1,7 +1,6 @@
 from rest_framework import generics
-
-from ..models import Comments
-from ..serizlizers.comment import CommentSerializer, CommentsDetailSerializer
+from comment.models import Comments
+from comment.serizlizers.comment import CommentSerializer, CommentsDetailSerializer
 
 
 class CommentListCreateView(generics.ListCreateAPIView):
